@@ -12,4 +12,10 @@ class BucketService extends ChangeNotifier {
     bucketList.add(Bucket(job, false));
     notifyListeners(); // 갱신 = Consumer<BucketService>의 builder 부분만 새로고침
   }
+
+  /// bucket 수정
+  void updateBucket(Bucket bucket, int index) {
+    bucketList[index] = bucket;
+    notifyListeners();
+  }
 }
