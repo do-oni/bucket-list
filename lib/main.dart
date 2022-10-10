@@ -1,9 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'bucket_service.dart';
 
 void main() {
   runApp(
-    const MyApp(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => BucketService()),
+      ],
+      child: const MyApp(),
+    ),
   );
 }
 
